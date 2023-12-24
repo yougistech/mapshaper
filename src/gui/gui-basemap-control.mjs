@@ -125,11 +125,14 @@ export function Basemap(gui, ext) {
     var warning;
 
     if (!dataCRS || !displayCRS || !crsIsUsable(displayCRS) || !crsIsUsable(dataCRS)) {
-      warning = 'This data is incompatible with the basemaps.';
+      // warning = 'This data is incompatible with the basemaps.';
+      warning = '这个数据不适合叠加地图展示.';
       if (!internal.layerHasGeometry(activeLyr.layer)) {
-        warning += ' Reason: layer is missing geographic data';
+        // warning += ' Reason: layer is missing geographic data';
+        warning += ' 原因: 图层缺少地理数据';
       } else if (!dataCRS) {
-        warning += ' Reason: unknown projection.';
+        // warning += ' Reason: unknown projection.';
+        warning += ' 原因: 未知投影.';
       }
 
       basemapWarning.html(warning).show();
