@@ -71,11 +71,11 @@ export function Basemap(gui, ext) {
       if (faded) {
         mapEl.css('opacity', 1);
         faded = false;
-        fadeBtn.text('Fade');
+        fadeBtn.text('遮罩');
       } else if (activeStyle) {
         mapEl.css('opacity', 0.35);
         faded = true;
-        fadeBtn.text('Unfade');
+        fadeBtn.text('去除遮罩');
       }
     });
 
@@ -176,7 +176,7 @@ export function Basemap(gui, ext) {
     loadStylesheet(params.css);
     loadScript(params.js, function() {
       map = new window.mapboxgl.Map({
-        accessToken: params.key,
+        accestokensToken: params.key,
         logoPosition: 'bottom-left',
         container: mapEl.node(),
         style: activeStyle.url,
